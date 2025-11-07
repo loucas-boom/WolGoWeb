@@ -1,22 +1,21 @@
 FROM --platform=${TARGETPLATFORM} chishin/golang-alpine AS build_base
 
-RUN mkdir -p /go/src/github.com/xiaoxinpro/ && \
-    cd /go/src/github.com/xiaoxinpro/ && \
-    git clone https://github.com/xiaoxinpro/WolGoWeb.git && \
-    cd /go/src/github.com/xiaoxinpro && ls -l && \
-    cd /go/src/github.com/xiaoxinpro/WolGoWeb && ls -l && \
+RUN mkdir -p /go/src/github.com/loucas-boom/ && \
+    cd /go/src/github.com/loucas-boom/ && \
+    git clone https://github.com/loucas-boom/WolGoWeb.git && \
+    cd /go/src/github.com/loucas-boom/WolGoWeb && ls -l && \
     go get ./src && \
     go build -ldflags "-w -s" -trimpath -o WolGoWeb ./src
 
 FROM --platform=${TARGETPLATFORM} alpine
 
-MAINTAINER chishin <pro@xxgzs.org>
+LABEL maintainer='loucas-boom'
 
-ENV VERSION ${BUILD_VERSION}
-ENV PORT 9090
-ENV KEY false
-ENV WEB true
-ENV TZ Asia/Shanghai
+ENV VERSION=${BUILD_VERSION}
+ENV PORT=${PORT}
+ENV KEY=${KEY}
+ENV WEB=${WEB}
+ENV TZ=${TZ}
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
     apk add tzdata && \
@@ -26,7 +25,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 WORKDIR /web
 
-COPY --from=build_base /go/src/github.com/xiaoxinpro/WolGoWeb/WolGoWeb .
+COPY --from=build_base /go/src/github.com/loucas-boom/WolGoWeb/WolGoWeb .
 
 RUN chmod 755 /web/WolGoWeb
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 BUILD_NAME="buildx-wol-go-web"
 BUILD_PLAT=linux/386,linux/amd64,linux/arm/v7,linux/arm64/v8
-BUILD_PUSH=chishin/wol-go-web
+BUILD_PUSH=cbgglh/wol-go-web
 BUILD_VERSION=$(cat ../.version)
 
 echo "=========== ${BUILD_NAME} ==========="

@@ -12,13 +12,13 @@ RUN go build -ldflags "-w -s" -trimpath -o WolGoWeb ./src
 
 FROM --platform=${TARGETPLATFORM} alpine
 
-MAINTAINER chishin <pro@xxgzs.org>
+LABEL maintainer='loucas-boom'
 
-ENV VERSION ${BUILD_VERSION}
-ENV PORT 9090
-ENV KEY false
-ENV WEB true
-ENV TZ Asia/Shanghai
+ENV VERSION=${BUILD_VERSION}
+ENV PORT=${PORT}
+ENV KEY=${KEY}
+ENV WEB=${WEB}
+ENV TZ=${TZ}
 
 WORKDIR /app
 

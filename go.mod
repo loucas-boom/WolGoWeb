@@ -1,4 +1,4 @@
-module github.com/xiaoxinpro/WolGoWeb
+module github.com/loucas-boom/WolGoWeb
 
 go 1.16
 
