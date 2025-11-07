@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	VERSION = "1.8.79"
+	VERSION = "1.8.80"
 )
 
 var (
@@ -61,7 +61,7 @@ func getEnvInt(name string, value int) int {
 func init() {
 	flag.StringVar(&ConfigSource, "c", "default", "config source default or env.")
 	flag.StringVar(&WebMode, "mode", gin.ReleaseMode, "wol web mode: debug, release, test.")
-	flag.IntVar(&WebPort, "port", 9090, "wol web port: 0-65535")
+	flag.IntVar(&WebPort, "port", 6969, "wol web port: 0-65535")
 	flag.BoolVar(&WebEnable, "web", true, "wol web page switch: true or false.")
 	flag.StringVar(&WebUsername, "username", "", "wol web page login username.")
 	flag.StringVar(&WebPassword, "password", "", "wol web page login password.")

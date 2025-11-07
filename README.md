@@ -1,3 +1,8 @@
+
+# 声明
+此项目是fork原作者xiaoxinpro的WolGoWeb项目，后改动了一些打包相关内容，核心内容不变，感谢原作者的无私奉献！
+
+
 # WolGoWeb
 
  WolGoWeb是一款远程唤醒WebAPI工具，主要用于搭建在局域网服务器或NAS中，实现WebAPI唤醒局域网内主机。
