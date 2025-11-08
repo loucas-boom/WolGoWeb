@@ -19,7 +19,7 @@ services:
     restart: unless-stopped
     network_mode: host
     environment:
-      - PORT=9090
+      - PORT=6699
       - KEY=false
 ```
 
@@ -48,7 +48,7 @@ docker run -d --net=host --env PORT=端口号 chishin/wol-go-web
 
 |参数名称|描述|备注
 |---|---|---|
-|PORT|开放服务端口|默认：9090|
+|PORT|开放服务端口|默认：6699|
 |KEY|API权限验证KEY|默认关闭，详见 [API权限验证说明](https://github.com/xiaoxinpro/WolGoWeb#4api%E6%9D%83%E9%99%90%E9%AA%8C%E8%AF%81)|
 
 ## 群晖Docker部署
